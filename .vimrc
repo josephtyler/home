@@ -12,7 +12,7 @@ syntax enable
 " let g:solarized_termcolors=256
 
 syntax on
-colorscheme zenburn
+colorscheme django
 
 let mapleader = ","
 

@@ -8,6 +8,7 @@ set hlsearch
 set expandtab
 set number
 set laststatus=2
+set t_Co=256
 syntax enable
 " let g:solarized_termcolors=256
 

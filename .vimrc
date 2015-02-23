@@ -32,3 +32,7 @@ map <C-n> :NERDTreeToggle<CR>
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 execute pathogen#infect() 
+
+if !empty(glob("~/.local.vimrc"))
+  source ~/.local.vimrc
+endif

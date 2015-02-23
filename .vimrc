@@ -14,7 +14,7 @@ syntax enable
 " let g:solarized_termcolors=256
 
 syntax on
-colorscheme django
+colorscheme codeschool
 
 let mapleader = ","
 

@@ -17,6 +17,7 @@ syntax on
 colorscheme codeschool
 
 let mapleader = ","
+let NERDTreeQuitOnOpen=1
 
 nmap <C-l> gt
 nmap <C-h> gT

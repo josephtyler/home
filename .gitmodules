@@ -7,3 +7,6 @@
 [submodule ".vim/bundle/vim-buffergator"]
 	path = .vim/bundle/vim-buffergator
 	url = https://github.com/jeetsukumaran/vim-buffergator.git
+[submodule ".vim/bundle/vim-flake8"]
+	path = .vim/bundle/vim-flake8
+	url = https://github.com/nvie/vim-flake8.git

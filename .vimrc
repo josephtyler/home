@@ -30,6 +30,8 @@ map <leader>q :bufdo q!<CR>
 map <leader>c :nohlsearch<CR>
 map <C-n> :NERDTreeToggle<CR>
 
+imap jj <Esc>
+
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 execute pathogen#infect() 

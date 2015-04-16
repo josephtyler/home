@@ -22,8 +22,6 @@ let NERDTreeQuitOnOpen=1
 nmap <C-l> gt
 nmap <C-h> gT
 
-com! SD !sudo /var/zimbio/START_DJANGO &
-map <leader>s :w<CR>:SD<CR>
 map <leader>e :bufdo e!<CR>
 map <leader>w :bufdo w!<CR>
 map <leader>q :bufdo q!<CR>
@@ -35,6 +33,8 @@ imap jj <Esc>
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 execute pathogen#infect() 
+
+set wildignore+=*.pyc,bin/*,lib/*
 
 if !empty(glob("~/.local.vimrc"))
   source ~/.local.vimrc

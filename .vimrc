@@ -6,11 +6,15 @@ autocmd FileType htmldjango setl tabstop=2|setl shiftwidth=2|setl softtabstop=2
 autocmd FileType javascript setl tabstop=2|setl shiftwidth=2|setl softtabstop=2
 autocmd FileType css setl tabstop=2|setl shiftwidth=2|setl softtabstop=2
 
+" remove all trailing whitespace on :w
+autocmd BufWritePre * :%s/\s\+$//e
+
 set hlsearch
 set expandtab
 set number
 set laststatus=2
 set t_Co=256
+set noswapfile
 syntax enable
 " let g:solarized_termcolors=256
 
@@ -33,7 +37,7 @@ imap jj <Esc>
 
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 
-execute pathogen#infect() 
+execute pathogen#infect()
 
 set wildignore+=*.pyc,bin/*,lib/*
 

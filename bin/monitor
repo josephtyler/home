@@ -1,0 +1,6 @@
+#!/bin/bash
+
+while inotifywait -r -e modify -e create /var/zimbio/zimbio2; do
+        echo "restarting django"
+        `sudo /var/zimbio/START_DJANGO`
+done

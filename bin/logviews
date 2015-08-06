@@ -1,0 +1,42 @@
+#!/usr/bin/python
+
+import os
+import re
+import subprocess
+
+
+filename = "/var/log/zimbio/error.log"
+
+stdin,stdout = os.popen2("tail -100 %s" % filename)
+
+stdin.close()
+lines = stdout.readlines()
+stdout.close()
+
+# Loop through the lines backwards until we find the "REQUEST STATS"
+counter = len(lines) - 1
+lns = []
+while counter >= 0:
+    if re.search("DEBUG REQUEST STATS", lines[counter]):
+        lns.append(lines[counter])
+    counter = counter - 1
+
+views = []
+for line in lns:
+    comp = line.split(" ")
+    this_one = False
+    for x in comp:
+        if this_one:
+            views.append(x)
+            break
+        if x == "View":
+            this_one = True
+
+for view in views:
+    command = "ack \"def %s\(\"" % view
+    #print command
+    #print view
+    res = subprocess.check_output(command, shell=True)
+    comp = res.split(":")
+    if comp:
+        print "%s : %s : line %s" % (view, comp[0], comp[1])

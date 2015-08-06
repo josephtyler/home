@@ -1,0 +1,8 @@
+#!/bin/bash
+
+cmd="multitail --mergeall"
+for i in www101i www102i www103i www104i www105i www106i www107i www108i www109i www110i www111i www112i www113i www115i www116i www117i www118i www119i www120i www121i www122i www123i; do
+cmd="$cmd -l 'ssh $i \"tail -F /var/log/zimbio/error.log | grep ERROR\" | sed -e \"s/^/$i: /\" '"
+done
+echo $cmd
+sudo bash -c "$cmd"

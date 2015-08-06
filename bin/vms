@@ -1,0 +1,1 @@
+sudo ssh 192.168.250.3 ps auxw | perl -lne 'print "$2\t$1" if m,/qemu/(\S+).monitor.*0:(\d),'

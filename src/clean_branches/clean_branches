@@ -1,0 +1,15 @@
+#!/usr/bin/python
+
+from git import Repo
+
+repo = Repo('.')
+
+SAFE_BRANCHES = ["develop", "master"]
+
+for branch in repo.branches:
+    if branch in SAFE_BRANCHES:
+        continue
+    if raw_input("Delete {}? (Y/n): ".format(branch)) in ["y", "Y", ""]:
+        print "Deleting both local and remote: {}".format(branch)
+        repo.delete_head(branch, force=True)
+        # repo.delete_remote(branch)

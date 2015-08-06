@@ -1,0 +1,3 @@
+#!/bin/bash
+
+sudo -u zimbio ipython $@ -i ~/ipython-start.py

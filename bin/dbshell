@@ -1,0 +1,3 @@
+#!/bin/bash
+
+sudo -u zimbio python /var/zimbio/zimbio2/manage.py dbshell

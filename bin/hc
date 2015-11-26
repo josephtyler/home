@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# Colors
+GREEN='\033[0;32m'
+NC='\033[0m'
+
+set -e
+
+cd ~/Developer/howchoo
+
+status=$(docker-machine status default)
+printf "${GREEN}docker-machine status: ${status}${NC}\n"
+
+if [[ $status -ne "Running" ]]; then
+    printf "${GREEN}restarting docker-machine${NC}\n"
+    docker-machine restart default
+fi
+
+printf "${GREEN}setting environment${NC}\n"
+eval "$(docker-machine env default)"
+
+printf "${GREEN}building containers${NC}\n"
+docker-compose up -d

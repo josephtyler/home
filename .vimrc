@@ -3,6 +3,7 @@ autocmd FileType php setl tabstop=4|setl shiftwidth=4|setl softtabstop=4
 autocmd FileType sh setl tabstop=4|setl shiftwidth=4|setl softtabstop=4
 autocmd FileType ruby setl tabstop=2|setl shiftwidth=2|setl softtabstop=2
 autocmd FileType html setl tabstop=2|setl shiftwidth=2|setl softtabstop=2
+autocmd FileType yaml setl tabstop=2|setl shiftwidth=2|setl softtabstop=2
 autocmd FileType htmldjango setl tabstop=2|setl shiftwidth=2|setl softtabstop=2
 autocmd FileType javascript setl tabstop=2|setl shiftwidth=2|setl softtabstop=2
 autocmd FileType css setl tabstop=2|setl shiftwidth=2|setl softtabstop=2
@@ -50,9 +51,9 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 " syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
 
 " let g:syntastic_always_populate_loc_list = 1
 " let g:syntastic_auto_loc_list = 1

@@ -19,6 +19,7 @@ if [[ -d home ]]; then
     git pull origin master
 else
     git clone --recursive git@github.com:josephtyler/home.git home
+    git submodule update --recursive
 fi
 
 # Make the sym links

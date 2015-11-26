@@ -18,7 +18,7 @@ if [[ -d home ]]; then
     cd home
     git pull origin master
 else
-    git clone git@github.com:josephtyler/home.git home
+    git clone --recursive git@github.com:josephtyler/home.git home
 fi
 
 # Make the sym links

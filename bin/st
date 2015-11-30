@@ -1,0 +1,3 @@
+#!/bin/bash
+
+sudo /var/zimbio/START_DJANGO

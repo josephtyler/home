@@ -1,15 +1,9 @@
-[submodule ".vim/bundle/ctrlp.vim"]
+[submodule "ctrlp.vim"]
 	path = .vim/bundle/ctrlp.vim
 	url = https://github.com/kien/ctrlp.vim.git
-[submodule ".vim/bundle/nerdtree"]
+[submodule "nerdtree"]
 	path = .vim/bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
-[submodule ".vim/bundle/vim-buffergator"]
+[submodule "vim-buffergator"]
 	path = .vim/bundle/vim-buffergator
 	url = https://github.com/jeetsukumaran/vim-buffergator.git
-[submodule ".vim/bundle/vim-flake8"]
-	path = .vim/bundle/vim-flake8
-	url = https://github.com/nvie/vim-flake8.git
-[submodule ".vim/bundle/syntastic"]
-	path = .vim/bundle/syntastic
-	url = https://github.com/scrooloose/syntastic.git

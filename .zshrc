@@ -6,7 +6,8 @@ export ZSH=/Users/josephtyler/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 # ZSH_THEME="robbyrussell"
-ZSH_THEME="agnoster"
+# ZSH_THEME="agnoster"
+ZSH_THEME="sorin"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -54,7 +55,7 @@ plugins=(git)
 
 # User configuration
 
-export PATH="/Library/Frameworks/Python.framework/Versions/3.4/bin:/Users/josephtyler/.rvm/gems/ruby-2.2.0/bin:/Users/josephtyler/.rvm/gems/ruby-2.2.0@global/bin:/Users/josephtyler/.rvm/rubies/ruby-2.2.0/bin:/usr/local/heroku/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/go/bin:/usr/local/sbin:/Users/josephtyler/bin:/Users/josephtyler/.rvm/bin"
+export PATH="$PATH:/Library/Frameworks/Python.framework/Versions/3.4/bin:/Users/josephtyler/.rvm/gems/ruby-2.2.0/bin:/Users/josephtyler/.rvm/gems/ruby-2.2.0@global/bin:/Users/josephtyler/.rvm/rubies/ruby-2.2.0/bin:/usr/local/heroku/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/go/bin:/usr/local/sbin:/Users/josephtyler/bin:/Users/josephtyler/.rvm/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -83,5 +84,6 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias lld="ssh -l tyler tyler.zimbiodev.com"
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting

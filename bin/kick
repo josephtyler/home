@@ -5,3 +5,22 @@ do
     echo "copying: $var"
     rsync -R $var kickstarti:~/staging/.
 done
+
+
+printf '%s\n' "$@" > ~/.manifest
+scp ~/.manifest kickstarti:
+rm ~/.manifest
+
+cat << 'END' > ~/.kickrc
+OLD_IFS=$IFS
+IFS=$'\n'
+read -d ' ' -r -a wordsarr < .manifest
+words="${wordsarr[@]}"
+IFS=' '
+complete -W "$words" ./deploy.sh
+IFS=$OLD_IFS
+END
+scp ~/.kickrc kickstarti:
+rm ~/.kickrc
+
+ssh kickstarti -t "bash --rcfile .kickrc"

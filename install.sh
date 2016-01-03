@@ -24,6 +24,27 @@ else
     git submodule update .vim/bundle/vim-buffergator
 fi
 
+# Removing existing files, directories and symlinks
+if [[ -d ~/bin ]]; then
+    rm -rf ~/bin
+fi
+
+if [[ -d ~/src ]]; then
+    rm -rf ~/src
+fi
+
+if [[ -d ~/.vim ]]; then
+    rm -rf ~/.vim
+fi
+
+if [[ -f ~/.vimrc ]]; then
+    rm ~/.vimrc
+fi
+
+if [[ -f ~/.zshrc ]]; then
+    rm ~/.zshrc
+fi
+
 # Make the sym links
 ln -s ~/home/bin ~/bin
 ln -s ~/home/src ~/src

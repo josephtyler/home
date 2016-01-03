@@ -85,5 +85,9 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias lld="ssh -l tyler tyler.zimbiodev.com"
+alias denv="eval '$(docker-machine env default)'"
+alias kick="ssh -l tyler kickstart.howchoo.com"
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+source /usr/local/bin/virtualenvwrapper.sh

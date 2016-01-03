@@ -30,3 +30,4 @@ ln -s ~/home/src ~/src
 ln -s ~/home/.vim ~/.vim
 ln -s ~/home/.vimrc ~/.vimrc
 ln -s ~/home/.zshrc ~/.zshrc
+ln -s ~/home/.tmux.conf ~/.tmux.conf

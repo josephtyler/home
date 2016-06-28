@@ -85,9 +85,18 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias lld="ssh -l tyler tyler.zimbiodev.com"
-alias denv="eval '$(docker-machine env default)'"
-alias kick="ssh -l tyler kickstart.howchoo.com"
+alias kickh="ssh -l tyler kickstart.howchoo.com"
+
+if hash docker-machine 2>/dev/null; then
+    alias denv="eval '$(docker-machine env default)'"
+fi
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
-source /usr/local/bin/virtualenvwrapper.sh
+if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
+    source /usr/local/bin/virtualenvwrapper.sh
+fi
+
+if [ -f "$HOME/.zshrc.local" ]; then
+    source "$HOME/.zshrc.local"
+fi

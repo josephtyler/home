@@ -6,7 +6,6 @@ do
     rsync -R $var kickstarti:~/staging/.
 done
 
-
 printf '%s\n' "$@" > ~/.manifest
 scp ~/.manifest kickstarti:
 rm ~/.manifest

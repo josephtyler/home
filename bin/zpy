@@ -1,3 +1,4 @@
 #!/bin/bash
 
-sudo -u zimbio ipython $@ -i ~/ipython-start.py
+# sudo -u zimbio ipython $@ -i ~/ipython-start.py
+sudo -u zimbio python /var/zimbio/zimbio2/manage.py shell

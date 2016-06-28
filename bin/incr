@@ -1,0 +1,40 @@
+#!/usr/bin/python
+
+import os
+import re
+import subprocess
+import sys
+
+os.chdir('/var/zimbio/zimbio2')
+
+settings_file = 'settings.py'
+tmp_file = 'tmp-file'
+
+with open(settings_file, 'r') as input_file, open(tmp_file, 'w') as output_file:
+    modified = False
+    for line in input_file:
+        if not modified:
+            res = re.match(r'JS_CSS_VERSION\s?=\s?(\d+)', line)
+            if res:
+                version = int(res.group(1)) + 1
+                output_file.write('JS_CSS_VERSION = {0}\n'.format(version))
+                modified = True
+                continue
+        output_file.write(line)
+
+subprocess.call(['diff', settings_file, tmp_file])
+
+valid = raw_input('\nIs this diff acceptable? (yN) ')
+
+if not (valid and valid.lower() == 'y'):
+    os.remove(tmp_file)
+    sys.exit('\nOk. No harm no foul. Update settings yourself.')
+
+os.rename(tmp_file, settings_file)
+subprocess.call(['git', 'commit', '-am', 'increment settings'])
+print '\nVersion incremented from {0} to {1}'.format(version - 1, version)
+
+push = raw_input('\nDo you want to push this to master? (yN) ')
+
+if push and push.lower() == 'y':
+    subprocess.call(['git', 'push', 'origin', 'master'])

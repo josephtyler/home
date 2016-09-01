@@ -35,6 +35,7 @@ map <leader>w :bufdo w!<CR>
 map <leader>q :bufdo q!<CR>
 map <leader>c :nohlsearch<CR>
 map <C-n> :NERDTreeToggle<CR>
+map <leader>r :SyntasticReset<CR>
 
 imap jj <Esc>
 
@@ -49,6 +50,11 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+
+" folding
+set foldmethod=syntax
+set foldlevel=99
+nnoremap <space> za
 
 " syntastic
 " set statusline+=%#warningmsg#

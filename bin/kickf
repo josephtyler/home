@@ -1,5 +1,12 @@
 #!/bin/bash
 
+# files=$@
+
+# if [[ -z "${files// }" ]]; then
+    # read files
+# fi
+
+# for var in "${files[@]}"
 for var in "$@"
 do
     echo "copying: $var"

@@ -19,10 +19,11 @@ if [[ -d home ]]; then
     git pull origin master
 else
     git clone --recursive git@github.com:josephtyler/home.git home
-    git submodule update .vim/bundle/ctrlp.vim
-    git submodule update .vim/bundle/nerdtree
-    git submodule update .vim/bundle/vim-buffergator
 fi
+
+git submodule update .vim/bundle/ctrlp.vim
+git submodule update .vim/bundle/nerdtree
+git submodule update .vim/bundle/vim-buffergator
 
 # Removing existing files, directories and symlinks
 if [[ -d ~/bin ]]; then

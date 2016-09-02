@@ -55,7 +55,7 @@ plugins=(git)
 
 # User configuration
 
-export PATH="$PATH:/Library/Frameworks/Python.framework/Versions/3.4/bin:/Users/josephtyler/.rvm/gems/ruby-2.2.0/bin:/Users/josephtyler/.rvm/gems/ruby-2.2.0@global/bin:/Users/josephtyler/.rvm/rubies/ruby-2.2.0/bin:/usr/local/heroku/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/go/bin:/usr/local/sbin:/Users/josephtyler/bin:/Users/josephtyler/.rvm/bin"
+export PATH="$PATH:/Library/Frameworks/PythoN.framework/Versions/3.4/bin:$HOME/rvm/gems/ruby-2.2.0/bin:$HOME/rvm/gems/ruby-2.2.0@global/bin:$HOME/rvm/rubies/ruby-2.2.0/bin:/usr/local/heroku/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/go/bin:/usr/local/sbin:$HOME/bin:$HOME/rvm/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -86,7 +86,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias lld="ssh -l tyler tyler.zimbiodev.com"
 alias denv="eval '$(docker-machine env default)'"
-alias kick="ssh -l tyler kickstart.howchoo.com"
+alias kick="ssh -l tyler ec2-54-208-61-73.compute-1.amazonaws.com"
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 

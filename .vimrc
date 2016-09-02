@@ -9,9 +9,11 @@ autocmd FileType javascript setl tabstop=2|setl shiftwidth=2|setl softtabstop=2
 autocmd FileType css setl tabstop=2|setl shiftwidth=2|setl softtabstop=2
 autocmd FileType scss setl tabstop=2|setl shiftwidth=2|setl softtabstop=2
 
+
 " remove all trailing whitespace on :w
 autocmd BufWritePre * :%s/\s\+$//e
 
+set smartindent
 set hlsearch
 set expandtab
 set number
@@ -40,6 +42,8 @@ imap jj <Esc>
 
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 
+let g:ctrlp_working_path_mode = 'c'
+
 execute pathogen#infect()
 
 set wildignore+=*.pyc,bin/*,lib/*
@@ -65,7 +69,7 @@ if !empty(glob("~/.local.vimrc"))
 endif
 
 " powerline
-set rtp+=/Users/raguay/Library/Python/2.7/lib/python/site-packages/powerline/bindings/vim
+set rtp+=/Users/tyler/Library/Python/2.7/lib/python/site-packages/powerline/bindings/vim
 
 " These lines setup the environment to show graphics and colors correctly.
 set nocompatible

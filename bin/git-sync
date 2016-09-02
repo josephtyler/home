@@ -1,0 +1,5 @@
+#!/bin/bash
+
+BRANCH=$(git branch|sed -n -e 's/^\* \(.*\)/\1/p')
+git pull origin $BRANCH
+git push origin $BRANCH

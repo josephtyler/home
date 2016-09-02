@@ -1,0 +1,3 @@
+#!/bin/bash
+
+kickf settings.py ui/platform/js/robin.js

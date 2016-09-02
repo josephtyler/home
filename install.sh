@@ -19,10 +19,11 @@ if [[ -d home ]]; then
     git pull origin master
 else
     git clone --recursive git@github.com:josephtyler/home.git home
-    git submodule update .vim/bundle/ctrlp.vim
-    git submodule update .vim/bundle/nerdtree
-    git submodule update .vim/bundle/vim-buffergator
 fi
+
+git submodule update .vim/bundle/ctrlp.vim
+git submodule update .vim/bundle/nerdtree
+git submodule update .vim/bundle/vim-buffergator
 
 # Removing existing files, directories and symlinks
 if [[ -d ~/bin ]]; then
@@ -45,10 +46,15 @@ if [[ -f ~/.zshrc ]]; then
     rm ~/.zshrc
 fi
 
+if [[ -f ~/.bashrc ]]; then
+    rm ~/.bashrc
+fi
+
 # Make the sym links
 ln -s ~/home/bin ~/bin
 ln -s ~/home/src ~/src
 ln -s ~/home/.vim ~/.vim
 ln -s ~/home/.vimrc ~/.vimrc
 ln -s ~/home/.zshrc ~/.zshrc
+ln -s ~/home/.bashrc ~/.bashrc
 ln -s ~/home/.tmux.conf ~/.tmux.conf

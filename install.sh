@@ -24,7 +24,7 @@ fi
 git submodule update --init .vim/bundle/ctrlp.vim
 git submodule update --init .vim/bundle/nerdtree
 git submodule update --init .vim/bundle/vim-buffergator
-git submodule update --init .vim/bundle/jshint.vim
+git submodule update --init .vim/bundle/jshint2
 
 # Removing existing files, directories and symlinks
 if [[ -d ~/bin ]]; then

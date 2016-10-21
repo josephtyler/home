@@ -21,3 +21,5 @@ PS1="$GREEN\u@\h$NO_COLOR:\w$YELLOW\$(parse_git_branch)$NO_COLOR$RED\$(parse_git
 if [[ -f /usr/local/etc/bash_completion.d/password-store ]]; then
     source /usr/local/etc/bash_completion.d/password-store
 fi
+
+export PATH=$PATH:$HOME/bin

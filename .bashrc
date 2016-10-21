@@ -6,7 +6,7 @@ function parse_git_branch () {
 }
 
 function parse_git_status () {
-    git diff --quiet
+    git diff --quiet 2> /dev/null
     if [[ $? -eq 1 ]]; then
         echo " * "
     fi

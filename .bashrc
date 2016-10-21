@@ -8,7 +8,7 @@ function parse_git_branch () {
 function parse_git_status () {
     git diff --quiet
     if [[ $? -eq 1 ]]; then
-        echo "*"
+        echo " * "
     fi
 }
 

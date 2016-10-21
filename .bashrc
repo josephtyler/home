@@ -10,4 +10,6 @@ GREEN="\[\033[0;32m\]"
 NO_COLOR="\[\033[0m\]"
 PS1="$GREEN\u@\h$NO_COLOR:\w$YELLOW\$(parse_git_branch)$NO_COLOR\$ "
 
-source /usr/local/etc/bash_completion.d/password-store
+if [[ -f /usr/local/etc/bash_completion.d/password-store ]]; then
+    source /usr/local/etc/bash_completion.d/password-store
+fi

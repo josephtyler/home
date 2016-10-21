@@ -21,9 +21,9 @@ else
     git clone --recursive git@github.com:josephtyler/home.git home
 fi
 
-git submodule update .vim/bundle/ctrlp.vim
-git submodule update .vim/bundle/nerdtree
-git submodule update .vim/bundle/vim-buffergator
+git submodule update --init .vim/bundle/ctrlp.vim
+git submodule update --init .vim/bundle/nerdtree
+git submodule update --init .vim/bundle/vim-buffergator
 
 # Removing existing files, directories and symlinks
 if [[ -d ~/bin ]]; then

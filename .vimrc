@@ -43,8 +43,6 @@ imap jj <Esc>
 
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 
-let g:ctrlp_working_path_mode = 'c'
-
 execute pathogen#infect()
 
 set wildignore+=*.pyc,bin/*,lib/*

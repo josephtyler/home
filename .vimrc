@@ -43,7 +43,7 @@ imap jj <Esc>
 
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 
-let g:ctrlp_working_path_mode = 'c'
+" let g:ctrlp_working_path_mode = 'c'
 
 execute pathogen#infect()
 

@@ -22,28 +22,34 @@ else
 fi
 
 # Submodules, vim extensions
-if [[ -f .vim/bundle/ctrlp.vim ]]; then
+if [[ -d .vim/bundle/ctrlp.vim ]]; then
     git submodule update --init .vim/bundle/ctrlp.vim
 else
     git submodule add git@github.com:kien/ctrlp.vim.git .vim/bundle/ctrlp.vim
 fi
 
-if [[ -f .vim/bundle/nerdtree ]]; then
+if [[ -d .vim/bundle/nerdtree ]]; then
     git submodule update --init .vim/bundle/nerdtree
 else
     git submodule add git@github.com:scrooloose/nerdtree.git .vim/bundle/nerdtree
 fi
 
-if [[ -f .vim/bundle/vim-buffergator ]]; then
+if [[ -d .vim/bundle/vim-buffergator ]]; then
     git submodule update --init .vim/bundle/vim-buffergator
 else
     git submodule add git@github.com:jeetsukumaran/vim-buffergator.git .vim/bundle/vim-buffergator
 fi
 
-if [[ -f .vim/bundle/jshint2 ]]; then
+if [[ -d .vim/bundle/jshint2 ]]; then
     git submodule update --init .vim/bundle/jshint2
 else
     git submodule add git@github.com:Shutnik/jshint2.vim.git .vim/bundle/jshint2
+fi
+
+if [[ -d .vim/bundle/syntastic ]]; then
+    git submodule update --init .vim/bundle/syntastic
+else
+    git submodule add git@github.com:scrooloose/syntastic.git .vim/bundle/syntastic
 fi
 
 # Removing existing files, directories and symlinks

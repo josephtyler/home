@@ -1,4 +1,4 @@
-alias lld="ssh -l tyler tyler.zimbiodev.com"
+alias lld="mosh tyler@tyler.zimbiodev.com"
 alias kick="ssh -l tyler ec2-54-208-61-73.compute-1.amazonaws.com"
 
 function parse_git_branch () {

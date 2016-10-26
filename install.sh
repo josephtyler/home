@@ -21,10 +21,30 @@ else
     git clone --recursive git@github.com:josephtyler/home.git home
 fi
 
-git submodule update --init .vim/bundle/ctrlp.vim
-git submodule update --init .vim/bundle/nerdtree
-git submodule update --init .vim/bundle/vim-buffergator
-git submodule update --init .vim/bundle/jshint2
+# Submodules, vim extensions
+if [[ -f .vim/bundle/ctrlp.vim ]]; then
+    git submodule update --init .vim/bundle/ctrlp.vim
+else
+    git submodule add git@github.com:kien/ctrlp.vim.git .vim/bundle/ctrlp.vim
+fi
+
+if [[ -f .vim/bundle/nerdtree ]]; then
+    git submodule update --init .vim/bundle/nerdtree
+else
+    git submodule add git@github.com:scrooloose/nerdtree.git .vim/bundle/nerdtree
+fi
+
+if [[ -f .vim/bundle/vim-buffergator ]]; then
+    git submodule update --init .vim/bundle/vim-buffergator
+else
+    git submodule add git@github.com:jeetsukumaran/vim-buffergator.git .vim/bundle/vim-buffergator
+fi
+
+if [[ -f .vim/bundle/jshint2 ]]; then
+    git submodule update --init .vim/bundle/jshint2
+else
+    git submodule add git@github.com:Shutnik/jshint2.vim.git .vim/bundle/jshint2
+fi
 
 # Removing existing files, directories and symlinks
 if [[ -d ~/bin ]]; then

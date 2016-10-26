@@ -52,6 +52,12 @@ else
     git submodule add git@github.com:scrooloose/syntastic.git .vim/bundle/syntastic
 fi
 
+if [[ -d .vim/bundles/solarized ]]; then
+    git submodule update --init .vim/bundle/solarized
+else
+    git submodule add git://github.com/altercation/vim-colors-solarized.git .vim/bundle/solarized
+fi
+
 # Removing existing files, directories and symlinks
 if [[ -d ~/bin ]]; then
     rm -rf ~/bin

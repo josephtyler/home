@@ -16,6 +16,3 @@
 [submodule ".vim/bundle/jshint2"]
 	path = .vim/bundle/jshint2
 	url = git@github.com:Shutnik/jshint2.vim.git
-[submodule ".vim/bundle/solarized"]
-	path = .vim/bundle/solarized
-	url = git://github.com/altercation/vim-colors-solarized.git

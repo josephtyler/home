@@ -21,10 +21,11 @@ set laststatus=2
 set t_Co=256
 set noswapfile
 syntax enable
+set background=dark
+colorscheme solarized
 " let g:solarized_termcolors=256
 
 syntax on
-colorscheme codeschool
 
 let mapleader = ","
 let NERDTreeQuitOnOpen=1
@@ -68,16 +69,11 @@ nnoremap <space> za
 " let g:syntastic_check_on_open = 1
 " let g:syntastic_check_on_wq = 0
 
-if !empty(glob("~/.local.vimrc"))
-  source ~/.local.vimrc
-endif
-
 " powerline
 set rtp+=/Users/tyler/Library/Python/2.7/lib/python/site-packages/powerline/bindings/vim
 
 " These lines setup the environment to show graphics and colors correctly.
 set nocompatible
-set t_Co=256
 
 let g:minBufExplForceSyntaxEnable = 1
 python from powerline.vim import setup as powerline_setup
@@ -100,3 +96,7 @@ set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusl
 " buffergator
 let g:buffergator_viewport_split_policy = "B"
 let g:buffergator_sort_regime = "mru"
+
+if !empty(glob("~/.local.vimrc"))
+  source ~/.local.vimrc
+endif

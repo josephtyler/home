@@ -9,7 +9,6 @@ autocmd FileType javascript setl tabstop=2|setl shiftwidth=2|setl softtabstop=2
 autocmd FileType css setl tabstop=2|setl shiftwidth=2|setl softtabstop=2
 autocmd FileType scss setl tabstop=2|setl shiftwidth=2|setl softtabstop=2
 
-
 " remove all trailing whitespace on :w
 autocmd BufWritePre * :%s/\s\+$//e
 
@@ -20,27 +19,23 @@ set number
 set laststatus=2
 set t_Co=256
 set noswapfile
+
+" theme
 syntax enable
 set background=dark
 colorscheme solarized
-" let g:solarized_termcolors=256
-
-syntax on
 
 let mapleader = ","
 let NERDTreeQuitOnOpen=1
-
-nmap <C-l> gt
-nmap <C-h> gT
 
 map <leader>e :bufdo e!<CR>
 map <leader>w :bufdo w!<CR>
 map <leader>q :bufdo q!<CR>
 map <leader>c :nohlsearch<CR>
-map <C-n> :NERDTreeToggle<CR>
-map <leader>r :SyntasticReset<CR>
 
-imap jj <Esc>
+
+" NERDTree
+map <C-n> :NERDTreeToggle<CR>
 
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 
@@ -54,12 +49,13 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
-" folding
+" code folding
 set foldmethod=syntax
 set foldlevel=99
 nnoremap <space> za
 
 " syntastic
+map <leader>r :SyntasticReset<CR>
 " set statusline+=%#warningmsg#
 " set statusline+=%{SyntasticStatuslineFlag()}
 " set statusline+=%*

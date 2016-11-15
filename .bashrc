@@ -1,5 +1,6 @@
 alias lld="mosh tyler@tyler.zimbiodev.com"
-alias kick="ssh -l tyler ec2-54-208-61-73.compute-1.amazonaws.com"
+alias kick="mosh tyler@ec2-54-208-61-73.compute-1.amazonaws.com"
+alias kick-s="ssh -l tyler ec2-54-208-61-73.compute-1.amazonaws.com"
 alias ll="ls -lha"
 
 function parse_git_branch () {
@@ -26,6 +27,14 @@ fi
 
 if [[ -f /usr/local/etc/bash_completion.d/password-store ]]; then
     source /usr/local/etc/bash_completion.d/password-store
+fi
+
+if [[ -f /usr/local/bin/virtualenvwrapper.sh ]]; then
+    source /usr/local/bin/virtualenvwrapper.sh
+    export WORKON_HOME=~/Envs
+    if [[ ! -d $WORKON_HOME ]]; then
+        mkdir $WORKON_HOME
+    fi
 fi
 
 export PATH=$PATH:$HOME/bin

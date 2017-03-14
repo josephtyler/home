@@ -1,5 +1,7 @@
-alias lld="mosh tyler@tyler.zimbiodev.com"
-alias kick="mosh tyler@ec2-54-208-61-73.compute-1.amazonaws.com"
+# alias lld="mosh tyler@tyler.zimbiodev.com"
+alias lld="ssh tyler@tyler.zimbiodev.com"
+# alias kick="mosh tyler@ec2-54-208-61-73.compute-1.amazonaws.com"
+alias kick="mosh tyler@kickstart.howchoo.com"
 alias kick-s="ssh -l tyler ec2-54-208-61-73.compute-1.amazonaws.com"
 alias ll="ls -lha"
 

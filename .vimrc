@@ -12,7 +12,6 @@ autocmd FileType scss setl tabstop=2|setl shiftwidth=2|setl softtabstop=2
 " remove all trailing whitespace on :w
 autocmd BufWritePre * :%s/\s\+$//e
 
-set smartindent
 set hlsearch
 set expandtab
 set number

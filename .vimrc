@@ -12,15 +12,16 @@ autocmd FileType scss setl tabstop=2|setl shiftwidth=2|setl softtabstop=2
 " remove all trailing whitespace on :w
 autocmd BufWritePre * :%s/\s\+$//e
 
-set nosmartindent
 set autoindent
-set hlsearch
-set smarttab
+set backspace=indent,eol,start
 set expandtab
-set number
+set hlsearch
 set laststatus=2
-set t_Co=256
+set nosmartindent
 set noswapfile
+set number
+set smarttab
+set t_Co=256
 
 filetype plugin indent on
 

@@ -90,3 +90,5 @@ ln -s ~/home/.vim ~/.vim
 ln -s ~/home/.vimrc ~/.vimrc
 ln -s ~/home/.bashrc ~/.bashrc
 ln -s ~/home/.tmux.conf ~/.tmux.conf
+ln -s ~/home/.bash_profile ~/.bash_profile
+ln -s ~/home/.bash_completion ~/.bash_completion

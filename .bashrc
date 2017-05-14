@@ -31,6 +31,10 @@ if [[ -f /usr/local/etc/bash_completion.d/password-store ]]; then
     source /usr/local/etc/bash_completion.d/password-store
 fi
 
+if [[ -f "$HOME/.bash_completion" ]]; then
+    source "$HOME/.bash_completion"
+fi
+
 if [[ -f /usr/local/bin/virtualenvwrapper.sh ]]; then
     source /usr/local/bin/virtualenvwrapper.sh
     export WORKON_HOME=~/Envs

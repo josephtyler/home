@@ -1,4 +1,7 @@
+execute pathogen#infect()
+
 autocmd FileType python setl tabstop=4|setl shiftwidth=4|setl softtabstop=4
+autocmd FileType java setl tabstop=4|setl shiftwidth=4|setl softtabstop=4
 autocmd FileType php setl tabstop=4|setl shiftwidth=4|setl softtabstop=4
 autocmd FileType sh setl tabstop=4|setl shiftwidth=4|setl softtabstop=4
 autocmd FileType ruby setl tabstop=2|setl shiftwidth=2|setl softtabstop=2
@@ -6,11 +9,17 @@ autocmd FileType html setl tabstop=2|setl shiftwidth=2|setl softtabstop=2
 autocmd FileType yaml setl tabstop=2|setl shiftwidth=2|setl softtabstop=2
 autocmd FileType htmldjango setl tabstop=2|setl shiftwidth=2|setl softtabstop=2
 autocmd FileType javascript setl tabstop=2|setl shiftwidth=2|setl softtabstop=2
+autocmd FileType json setl tabstop=2|setl shiftwidth=2|setl softtabstop=2
 autocmd FileType css setl tabstop=2|setl shiftwidth=2|setl softtabstop=2
 autocmd FileType scss setl tabstop=2|setl shiftwidth=2|setl softtabstop=2
+autocmd FileType xml setl tabstop=2|setl shiftwidth=2|setl softtabstop=2
+autocmd FileType sql setl tabstop=2|setl shiftwidth=2|setl softtabstop=2
 
 " remove all trailing whitespace on :w
 autocmd BufWritePre * :%s/\s\+$//e
+
+" Set filetype for all dockerfiles
+autocmd BufRead,BufNewFile Dockerfile* set filetype=dockerfile
 
 set autoindent
 set backspace=indent,eol,start
@@ -28,7 +37,8 @@ filetype plugin indent on
 " theme
 syntax enable
 set background=dark
-colorscheme solarized
+" colorscheme solarized
+colorscheme badwolf
 
 let mapleader = ","
 let NERDTreeQuitOnOpen=1
@@ -38,13 +48,12 @@ map <leader>w :bufdo w!<CR>
 map <leader>q :bufdo q!<CR>
 map <leader>c :nohlsearch<CR>
 
+autocmd FileType python map <leader>f :call Flake8()<CR>
 
 " NERDTree
 map <C-n> :NERDTreeToggle<CR>
 
 set runtimepath^=~/.vim/bundle/ctrlp.vim
-
-execute pathogen#infect()
 
 set wildignore+=*.pyc,bin/*,lib/*
 
@@ -77,9 +86,10 @@ set rtp+=/Users/tyler/Library/Python/2.7/lib/python/site-packages/powerline/bind
 set nocompatible
 
 let g:minBufExplForceSyntaxEnable = 1
-python from powerline.vim import setup as powerline_setup
-python powerline_setup()
-python del powerline_setup
+
+" python from powerline.vim import setup as powerline_setup
+" python powerline_setup()
+" python del powerline_setup
 
 if ! has('gui_running')
    set ttimeoutlen=10
@@ -101,3 +111,6 @@ let g:buffergator_sort_regime = "mru"
 if !empty(glob("~/.local.vimrc"))
   source ~/.local.vimrc
 endif
+
+" pydocstring
+let g:pydocstring_templates_dir = '~/home/.vim/random/templates'

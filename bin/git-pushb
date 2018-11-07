@@ -1,4 +1,4 @@
 #!/bin/bash
 
 BRANCH=$(git branch|sed -n -e 's/^\* \(.*\)/\1/p')
-git push origin $BRANCH
+git push "$@" origin $BRANCH

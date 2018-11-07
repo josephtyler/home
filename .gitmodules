@@ -19,3 +19,24 @@
 [submodule ".vim/bundle/solarized"]
 	path = .vim/bundle/solarized
 	url = git://github.com/altercation/vim-colors-solarized.git
+[submodule ".vim/bundles/pydocstring"]
+	path = .vim/bundles/pydocstring
+	url = git@github.com:heavenshell/vim-pydocstring.git
+[submodule ".vim/bundle/pydocstring"]
+	path = .vim/bundle/pydocstring
+	url = git@github.com:heavenshell/vim-pydocstring.git
+[submodule ".vim/bundle/SimpylFold"]
+	path = .vim/bundle/SimpylFold
+	url = git@github.com:tmhedberg/SimpylFold.git
+[submodule ".vim/bundle/restore_view"]
+	path = .vim/bundle/restore_view
+	url = git@github.com:vim-scripts/restore_view.vim.git
+[submodule ".vim/bundle/FastFold"]
+	path = .vim/bundle/FastFold
+	url = git@github.com:Konfekt/FastFold.git
+[submodule ".vim/bundle/dracula-theme"]
+	path = .vim/bundle/dracula-theme
+	url = git@github.com:dracula/vim.git
+[submodule ".vim/bundle/flake8"]
+	path = .vim/bundle/flake8
+	url = https://github.com/nvie/vim-flake8

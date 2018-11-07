@@ -1,0 +1,8 @@
+#!/bin/bash
+
+if [[ -z "$1" ]]; then
+    gcloud config configurations list
+    exit 0
+fi
+
+gcloud config configurations activate $1

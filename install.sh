@@ -22,12 +22,6 @@ else
 fi
 
 # Submodules, vim extensions
-if [[ -d .vim/bundle/ctrlp.vim ]]; then
-    git submodule update --init .vim/bundle/ctrlp.vim
-else
-    git submodule add git@github.com:kien/ctrlp.vim.git .vim/bundle/ctrlp.vim
-fi
-
 if [[ -d .vim/bundle/nerdtree ]]; then
     git submodule update --init .vim/bundle/nerdtree
 else
@@ -93,6 +87,12 @@ if [[ -d .vim/bundle/flake8 ]]; then
     git submodule update --init .vim/bundle/flake8
 else
     git submodule add https://github.com/nvie/vim-flake8 .vim/bundle/flake8
+fi
+
+if [[ -d .vim/bundle/fzf.vim ]]; then
+    git submodule update --init .vim/bundle/fzf.vim
+else
+    git submodule add git@github.com:junegunn/fzf.vim.git .vim/bundle/fzf.vim
 fi
 
 # Removing existing files, directories and symlinks

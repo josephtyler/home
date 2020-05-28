@@ -53,8 +53,6 @@ autocmd FileType python map <leader>f :call Flake8()<CR>
 " NERDTree
 map <C-n> :NERDTreeToggle<CR>
 
-set runtimepath^=~/.vim/bundle/ctrlp.vim
-
 set wildignore+=*.pyc,bin/*,lib/*
 
 " better split navigation
@@ -114,3 +112,7 @@ endif
 
 " pydocstring
 let g:pydocstring_templates_dir = '~/home/.vim/random/templates'
+
+" fzf
+set rtp+=/usr/local/opt/fzf
+map <C-p> :Files<CR>

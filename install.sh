@@ -70,12 +70,11 @@ else
     git submodule add git@github.com:tmhedberg/SimpylFold.git .vim/bundle/SimpylFold
 fi
 
-if [[ -d .vim/bundle/restore_view ]]; then
-    git submodule update --init .vim/bundle/restore_view
-else
-    git submodule add git@github.com:vim-scripts/restore_view.vim.git .vim/bundle/restore_view
-
-fi
+# if [[ -d .vim/bundle/restore_view ]]; then
+    # git submodule update --init .vim/bundle/restore_view
+# else
+    # git submodule add git@github.com:vim-scripts/restore_view.vim.git .vim/bundle/restore_view
+# fi
 
 if [[ -d .vim/bundle/FastFold ]]; then
     git submodule update --init .vim/bundle/FastFold
@@ -135,6 +134,7 @@ ln -s ~/home/src ~/src
 ln -s ~/home/.vim ~/.vim
 ln -s ~/home/.vimrc ~/.vimrc
 ln -s ~/home/.bashrc ~/.bashrc
+ln -s ~/home/.zshrc ~/.zshrc
 ln -s ~/home/.tmux.conf ~/.tmux.conf
 ln -s ~/home/.bash_completion ~/.bash_completion
 ln -s ~/home/.git-completion ~/.git-completion

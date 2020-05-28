@@ -1,13 +1,17 @@
-# alias kick="mosh tyler@ec2-54-208-61-73.compute-1.amazonaws.com"
-alias kick="mosh tyler@kickstart.howchoo.com"
-alias kick-s="ssh -l tyler ec2-54-208-61-73.compute-1.amazonaws.com"
 alias ll="ls -lha"
 
 alias ctags="`brew --prefix`/bin/ctags"
 alias python="python3"
-alias g="granite"
 alias hcgke="gcloud container clusters get-credentials production --zone us-west1-c --project howchoo-161906"
 alias kgp="kubectl get pods --field-selector=status.phase=Running"
+
+# k8s aliases
+alias k="kubectl"
+
+# Howchoo aliases
+alias h="howchoo"
+alias hd="howchoo dev"
+alias hdm="howchoo dev manage"
 
 COLOR_RED="\033[0;31m"
 COLOR_YELLOW="\033[0;33m"
@@ -87,5 +91,3 @@ if [[ -f /usr/local/bin/virtualenvwrapper.sh ]]; then
 fi
 
 export PATH=$PATH:$HOME/bin:$HOME/Library/Python/3.6/bin:$HOME/repos/howchoo/bin:$HOME/repos/etl-java/bin:$HOME/repos/kubernetes-configs/bin:$HOME/repos/web/bin/commands
-
-eval "$(_GRANITE_COMPLETE=source granite)"

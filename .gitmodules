@@ -28,9 +28,6 @@
 [submodule ".vim/bundle/SimpylFold"]
 	path = .vim/bundle/SimpylFold
 	url = git@github.com:tmhedberg/SimpylFold.git
-[submodule ".vim/bundle/restore_view"]
-	path = .vim/bundle/restore_view
-	url = git@github.com:vim-scripts/restore_view.vim.git
 [submodule ".vim/bundle/FastFold"]
 	path = .vim/bundle/FastFold
 	url = git@github.com:Konfekt/FastFold.git

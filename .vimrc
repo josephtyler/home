@@ -8,7 +8,8 @@ autocmd FileType ruby setl tabstop=2|setl shiftwidth=2|setl softtabstop=2
 autocmd FileType html setl tabstop=2|setl shiftwidth=2|setl softtabstop=2
 autocmd FileType yaml setl tabstop=2|setl shiftwidth=2|setl softtabstop=2
 autocmd FileType htmldjango setl tabstop=2|setl shiftwidth=2|setl softtabstop=2
-autocmd FileType javascript setl tabstop=2|setl shiftwidth=2|setl softtabstop=2
+autocmd FileType javascript.jsx setl tabstop=4|setl shiftwidth=4|setl softtabstop=4
+autocmd FileType jsx setl tabstop=4|setl shiftwidth=4|setl softtabstop=4
 autocmd FileType json setl tabstop=2|setl shiftwidth=2|setl softtabstop=2
 autocmd FileType css setl tabstop=2|setl shiftwidth=2|setl softtabstop=2
 autocmd FileType scss setl tabstop=2|setl shiftwidth=2|setl softtabstop=2
@@ -78,7 +79,7 @@ map <leader>r :SyntasticReset<CR>
 " let g:syntastic_check_on_wq = 0
 
 " powerline
-set rtp+=/Users/tyler/Library/Python/2.7/lib/python/site-packages/powerline/bindings/vim
+set rtp+=/Users/tyler/Library/Python/3.7/lib/python/site-packages/powerline/bindings/vim
 
 " These lines setup the environment to show graphics and colors correctly.
 set nocompatible

@@ -64,12 +64,6 @@ else
     git submodule add git@github.com:tmhedberg/SimpylFold.git .vim/bundle/SimpylFold
 fi
 
-# if [[ -d .vim/bundle/restore_view ]]; then
-    # git submodule update --init .vim/bundle/restore_view
-# else
-    # git submodule add git@github.com:vim-scripts/restore_view.vim.git .vim/bundle/restore_view
-# fi
-
 if [[ -d .vim/bundle/FastFold ]]; then
     git submodule update --init .vim/bundle/FastFold
 else
@@ -95,6 +89,12 @@ else
     git submodule add git@github.com:junegunn/fzf.vim.git .vim/bundle/fzf.vim
 fi
 
+if [[ -d .vim/bundle/vim-jsx ]]; then
+    git submodule update --init .vim/bundle/vim-jsx
+else
+    git submodule add git@github.com:mxw/vim-jsx.git .vim/bundle/vim-jsx
+fi
+
 # Removing existing files, directories and symlinks
 if [[ -d ~/bin ]]; then
     rm -rf ~/bin
@@ -112,16 +112,8 @@ if [[ -f ~/.vimrc ]]; then
     rm ~/.vimrc
 fi
 
-if [[ -f ~/.bashrc ]]; then
-    rm ~/.bashrc
-fi
-
-if [[ -f ~/.tmux.conf ]]; then
-    rm ~/.tmux.conf
-fi
-
-if [[ -f ~/.bash_completion ]]; then
-    rm ~/.bash_completion
+if [[ -f ~/.zshrc ]]; then
+    rm ~/.zshrc
 fi
 
 if [[ -f ~/.git-completion ]]; then
@@ -133,8 +125,5 @@ ln -s ~/home/bin ~/bin
 ln -s ~/home/src ~/src
 ln -s ~/home/.vim ~/.vim
 ln -s ~/home/.vimrc ~/.vimrc
-ln -s ~/home/.bashrc ~/.bashrc
 ln -s ~/home/.zshrc ~/.zshrc
-ln -s ~/home/.tmux.conf ~/.tmux.conf
-ln -s ~/home/.bash_completion ~/.bash_completion
 ln -s ~/home/.git-completion ~/.git-completion

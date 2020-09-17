@@ -97,12 +97,22 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# User aliases
 alias ctags="`brew --prefix`/bin/ctags"
+
+# Howchoo aliases
 alias k="kubectl"
 alias h="howchoo"
 alias hd="howchoo dev"
 alias hdm="howchoo dev manage"
 alias hdt="howchoo dev manage test"
+
+
+# North
+alias bvdebugger="docker-compose stop cms && docker-compose run --rm --service-ports cms"
+
+export st="bvdeploy@staging-web2.bobvila.com"
 
 if [[ -f $HOME/.zshrc.local ]]; then
     source $HOME/.zshrc.local
@@ -112,10 +122,9 @@ PATH=$PATH:$HOWCHOO_DIR/bin/commands  # Added by howchoo
 
 # fzf settings
 export FZF_DEFAULT_COMMAND='fd --type f'
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 PATH=$PATH:$HOME/bin
-
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" || true
 
 # Set up pyenv
 if command -v pyenv 1>/dev/null 2>&1; then
@@ -137,3 +146,35 @@ if [ -f '/usr/local/bin/google-cloud-sdk/path.zsh.inc' ]; then . '/usr/local/bin
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/usr/local/bin/google-cloud-sdk/completion.zsh.inc' ]; then . '/usr/local/bin/google-cloud-sdk/completion.zsh.inc'; fi
+
+# RUBY!!!
+# eval "$(rbenv init -)"
+
+# Kubectl completion
+source <(kubectl completion zsh)
+
+# Functions
+function de {
+  docker exec -it $(docker ps | grep $1 | awk '{print $1}') ${@:2}
+}
+
+# Modify prompt
+if [[ -f $HOME/.kube-ps1.sh ]]; then
+    source $HOME/.kube-ps1.sh
+    PROMPT='$(kube_ps1)'$PROMPT
+fi
+PROMPT=$PROMPT$'\n$ '
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" || true
+
+# TrackADM + The Drive helper configs
+function list_image_tags {
+  aws ecr describe-images --repository-name $1 --region $2 | jq '.imageDetails[].imageTags[]' | sort
+}
+
+function td_setup {
+  export AWS_PROFILE=thedrive
+  aws ecr get-login-password --region us-west-2 | docker login --username AWS --password-stdin 693435214819.dkr.ecr.us-west-2.amazonaws.com
+}
+
+alias list_trackadm_image_tags="list_image_tags trackadm.com us-west-2"

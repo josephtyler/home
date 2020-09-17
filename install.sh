@@ -95,6 +95,12 @@ else
     git submodule add git@github.com:mxw/vim-jsx.git .vim/bundle/vim-jsx
 fi
 
+if [[ -d .vim/bundle/Vundle.vim ]]; then
+    git submodule update --init .vim/bundle/Vundle.vim
+else
+    git submodule add git@github.com:VundleVim/Vundle.vim.git .vim/bundle/Vundle.vim
+fi
+
 # Removing existing files, directories and symlinks
 if [[ -d ~/bin ]]; then
     rm -rf ~/bin

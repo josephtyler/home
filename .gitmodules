@@ -40,3 +40,6 @@
 [submodule ".vim/bundle/vim-jsx"]
 	path = .vim/bundle/vim-jsx
 	url = git@github.com:mxw/vim-jsx.git
+[submodule ".vim/bundle/Vundle.vim"]
+	path = .vim/bundle/Vundle.vim
+	url = git@github.com:VundleVim/Vundle.vim.git

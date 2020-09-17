@@ -1,15 +1,28 @@
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+" Plugins
+Plugin 'vim-ruby/vim-ruby'
+
 execute pathogen#infect()
 
-autocmd FileType python setl tabstop=4|setl shiftwidth=4|setl softtabstop=4
+autocmd FileType python setl tabstop=4|setl shiftwidth=4|setl softtabstop=4|setl colorcolumn=80
 autocmd FileType java setl tabstop=4|setl shiftwidth=4|setl softtabstop=4
 autocmd FileType php setl tabstop=4|setl shiftwidth=4|setl softtabstop=4
 autocmd FileType sh setl tabstop=4|setl shiftwidth=4|setl softtabstop=4
-autocmd FileType ruby setl tabstop=2|setl shiftwidth=2|setl softtabstop=2
+autocmd FileType ruby setl tabstop=2|setl shiftwidth=2|setl softtabstop=2|setl colorcolumn=100
 autocmd FileType html setl tabstop=2|setl shiftwidth=2|setl softtabstop=2
 autocmd FileType yaml setl tabstop=2|setl shiftwidth=2|setl softtabstop=2
 autocmd FileType htmldjango setl tabstop=2|setl shiftwidth=2|setl softtabstop=2
-autocmd FileType javascript.jsx setl tabstop=4|setl shiftwidth=4|setl softtabstop=4
-autocmd FileType jsx setl tabstop=4|setl shiftwidth=4|setl softtabstop=4
+autocmd FileType javascript.jsx setl tabstop=2|setl shiftwidth=2|setl softtabstop=2
+autocmd FileType jsx setl tabstop=2|setl shiftwidth=2|setl softtabstop=2
 autocmd FileType json setl tabstop=2|setl shiftwidth=2|setl softtabstop=2
 autocmd FileType css setl tabstop=2|setl shiftwidth=2|setl softtabstop=2
 autocmd FileType scss setl tabstop=2|setl shiftwidth=2|setl softtabstop=2

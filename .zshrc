@@ -97,10 +97,12 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias ctags="`brew --prefix`/bin/ctags"
 alias k="kubectl"
 alias h="howchoo"
 alias hd="howchoo dev"
 alias hdm="howchoo dev manage"
+alias hdt="howchoo dev manage test"
 
 if [[ -f $HOME/.zshrc.local ]]; then
     source $HOME/.zshrc.local
@@ -112,3 +114,26 @@ PATH=$PATH:$HOWCHOO_DIR/bin/commands  # Added by howchoo
 export FZF_DEFAULT_COMMAND='fd --type f'
 
 PATH=$PATH:$HOME/bin
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" || true
+
+# Set up pyenv
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
+if command -v pyenv virtualenv 1>/dev/null 2>&1; then
+  eval "$(pyenv virtualenv init -)"
+fi
+
+# Run amazon etl
+function run_amazon_etl {
+    gsutil cp $HOME/Downloads/$1 gs://howchoo-revenue/amazon/orders_us/extract/;
+    kubectl exec -it $(kubectl get pod | grep web | head -n 1 | awk '{print $1}') -- python3 manage.py run-etl --pipeline=AmazonOrdersUSETL --report-name=$1;
+}
+
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/usr/local/bin/google-cloud-sdk/path.zsh.inc' ]; then . '/usr/local/bin/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/usr/local/bin/google-cloud-sdk/completion.zsh.inc' ]; then . '/usr/local/bin/google-cloud-sdk/completion.zsh.inc'; fi

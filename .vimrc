@@ -14,7 +14,7 @@ Plugin 'ambv/black'
 
 execute pathogen#infect()
 
-autocmd FileType python setl tabstop=4|setl shiftwidth=4|setl softtabstop=4|setl colorcolumn=80
+autocmd FileType python setl tabstop=4|setl shiftwidth=4|setl softtabstop=4|setl colorcolumn=89
 autocmd FileType java setl tabstop=4|setl shiftwidth=4|setl softtabstop=4
 autocmd FileType php setl tabstop=4|setl shiftwidth=4|setl softtabstop=4
 autocmd FileType sh setl tabstop=4|setl shiftwidth=4|setl softtabstop=4
@@ -130,3 +130,6 @@ let g:pydocstring_templates_dir = '~/home/.vim/random/templates'
 " fzf
 set rtp+=/usr/local/opt/fzf
 map <C-p> :Files<CR>
+
+" black
+let g:black_skip_string_normalization = 1

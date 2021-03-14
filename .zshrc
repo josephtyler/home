@@ -124,7 +124,10 @@ PATH=$PATH:$HOWCHOO_DIR/bin/commands  # Added by howchoo
 export FZF_DEFAULT_COMMAND='fd --type f'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-PATH=$PATH:$HOME/bin
+# go
+export GOPATH=$HOME/go
+
+PATH=$PATH:$HOME/bin:$GOPATH/bin
 
 # Set up pyenv
 if command -v pyenv 1>/dev/null 2>&1; then
@@ -135,11 +138,15 @@ if command -v pyenv virtualenv 1>/dev/null 2>&1; then
 fi
 
 # Run amazon etl
-function run_amazon_etl {
+function amzn_orders_us_etl {
     gsutil cp $HOME/Downloads/$1 gs://howchoo-revenue/amazon/orders_us/extract/;
     kubectl exec -it $(kubectl get pod | grep web | head -n 1 | awk '{print $1}') -- python3 manage.py run-etl --pipeline=AmazonOrdersUSETL --report-name=$1;
 }
 
+function amzn_earnings_us_etl {
+    gsutil cp $HOME/Downloads/$1 gs://howchoo-revenue/amazon/earnings_us/extract/;
+    kubectl exec -it $(kubectl get pod | grep web | head -n 1 | awk '{print $1}') -- python3 manage.py run-etl --pipeline=AmazonEarningsUSETL --report-name=$1;
+}
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/usr/local/bin/google-cloud-sdk/path.zsh.inc' ]; then . '/usr/local/bin/google-cloud-sdk/path.zsh.inc'; fi

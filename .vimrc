@@ -11,9 +11,11 @@ Plugin 'VundleVim/Vundle.vim'
 " Plugins
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'ambv/black'
+Plugin 'fatih/vim-go'
 
-execute pathogen#infect()
+" execute pathogen#infect()
 
+autocmd FileType go setl tabstop=4|setl shiftwidth=4|setl softtabstop=4|setl colorcolumn=89
 autocmd FileType python setl tabstop=4|setl shiftwidth=4|setl softtabstop=4|setl colorcolumn=89
 autocmd FileType java setl tabstop=4|setl shiftwidth=4|setl softtabstop=4
 autocmd FileType php setl tabstop=4|setl shiftwidth=4|setl softtabstop=4
